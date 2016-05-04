@@ -24,7 +24,7 @@ namespace MarketAmerica.Droid.Activities
         private Product selectedProduct;
         private CategoryRepository categoryRepository;
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected async override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
@@ -35,7 +35,7 @@ namespace MarketAmerica.Droid.Activities
 
             var selectedProductId = Intent.Extras.GetInt("selectedProductId");
 
-            selectedProduct = categoryRepository.GetProductById(selectedProductId);
+            selectedProduct = await categoryRepository.GetProductByIdAsync(selectedProductId);
 
             FindViews();
             BindProductDataToViews();

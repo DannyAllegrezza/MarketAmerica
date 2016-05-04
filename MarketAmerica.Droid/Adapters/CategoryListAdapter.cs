@@ -50,7 +50,7 @@ namespace MarketAmerica.Droid.Adapters
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             var item = items[position];
-            var imageBitmap = ImageHelper.GetImageBitmapFromUrl(item.products.FirstOrDefault().imageURL);
+            //var imageBitmap = ImageHelper.GetImageBitmapFromUrl(item.products.FirstOrDefault().imageURL);
 
             if (convertView == null)
             {
@@ -58,8 +58,8 @@ namespace MarketAmerica.Droid.Adapters
             }
 
             convertView.FindViewById<TextView>(Resource.Id.categoryNameTextView).Text = item.name;
-            convertView.FindViewById<TextView>(Resource.Id.categoryDescriptionTextView).Text = "View all " + item.name + " products!";
-            convertView.FindViewById<ImageView>(Resource.Id.categoryImageView).SetImageBitmap(imageBitmap);
+            convertView.FindViewById<TextView>(Resource.Id.categoryDescriptionTextView).Text = String.Format("View all {0} {1} products!", item.productCount, item.name);
+            //convertView.FindViewById<ImageView>(Resource.Id.categoryImageView).SetImageBitmap(imageBitmap);
             return convertView;
         }
 

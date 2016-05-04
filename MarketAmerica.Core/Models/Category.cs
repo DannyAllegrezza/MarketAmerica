@@ -2,8 +2,7 @@
 
 namespace MarketAmerica.Core.Models
 {
-    // A Category is a Group of products
-
+  
     public class Category
     {
         public string id { get; set; }

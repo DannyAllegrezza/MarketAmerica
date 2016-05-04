@@ -19,7 +19,7 @@ namespace MarketAmerica.Core.Models
         public float cashBack { get; set; }
         public float distributorCashBack { get; set; }
         public int ciPoints { get; set; }
-        public int bv { get; set; }
+        public float bv { get; set; }
         public float ibv { get; set; }
         public bool freeShipping { get; set; }
         public string catalogName { get; set; }
@@ -33,6 +33,12 @@ namespace MarketAmerica.Core.Models
         public Category category { get; set; }
         public Reviewdata reviewData { get; set; }
         public List<Link> links { get; set; }
+        public int numberOfProducts { get; set; }
+        public List<Product> products { get; set; }
+        public List<Category> categories { get; set; }
+        public List<Brand> brands { get; set; }
+        public List<Seller> sellers { get; set; }
+        public List<Pricerange> priceRanges { get; set; }
     }
 
     public class Reviewdata
@@ -40,5 +46,9 @@ namespace MarketAmerica.Core.Models
         public string count { get; set; }
         public int rating { get; set; }
     }
+
+
+
+
 
 }

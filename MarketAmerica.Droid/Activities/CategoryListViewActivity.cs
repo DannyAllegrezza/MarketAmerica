@@ -22,7 +22,7 @@ namespace MarketAmerica.Droid.Activities
         private List<Category> allCategories;               // What we will bind our data to
         private CategoryRepository categoryRepository;      // Used to get all of the Categories from the service
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected async override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             // Sets the View for this Activity            
@@ -30,7 +30,7 @@ namespace MarketAmerica.Droid.Activities
             categoryListView = FindViewById<ListView>(Resource.Id.categoryListView);
 
             categoryRepository = new CategoryRepository();
-            allCategories = categoryRepository.GetAllCategories();
+            allCategories = await categoryRepository.GetAllAutomotiveSubCategoriesAsync();
 
             // Now, we need to bind the data to the ListView. We use an Adapter for this
             categoryListView.Adapter = new CategoryListAdapter(this, allCategories);                    
@@ -49,5 +49,6 @@ namespace MarketAmerica.Droid.Activities
 
             StartActivityForResult(intent, 100); // The 2nd param is the "Request Code"
         }
+
     }
 }

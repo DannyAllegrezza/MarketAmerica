@@ -22,7 +22,7 @@ namespace MarketAmerica.Droid.Activities
         private List<Product> products; // What we will bind our data to
         private CategoryRepository categoryRepository; // Used to get all of the Categories from the service
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected async override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
@@ -39,7 +39,7 @@ namespace MarketAmerica.Droid.Activities
             var categoryId = Intent.Extras.GetString("selectedCategoryId");
 
             // Fetch all the Categories 
-            products = categoryRepository.GetAllProductsForCategoryById(categoryId);
+            products = await categoryRepository.GetAllProductsForCategoryByIdAsync(categoryId);
 
             // Now, we need to bind the data to the ListView. We use an Adapter for this
             productListView.Adapter = new ProductListAdapter(this, products);
