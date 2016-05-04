@@ -27,15 +27,13 @@ namespace MarketAmerica.Droid.Activities
         protected async override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
-            // Link the Activity with the View
-            SetContentView(Resource.Layout.ProductDetailView);
+            
 
             categoryRepository = new CategoryRepository();
-
             var selectedProductId = Intent.Extras.GetInt("selectedProductId");
-
             selectedProduct = await categoryRepository.GetProductByIdAsync(selectedProductId);
+
+            SetContentView(Resource.Layout.ProductDetailView);
 
             FindViews();
             BindProductDataToViews();
