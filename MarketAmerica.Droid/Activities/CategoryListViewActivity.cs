@@ -15,7 +15,7 @@ using MarketAmerica.Droid.Adapters;
 
 namespace MarketAmerica.Droid.Activities
 {
-    [Activity(Label = "Automotive Categories", MainLauncher = true)]
+    [Activity(Label = "SHOP.com Automotive Categories", MainLauncher = true, Icon = "@drawable/icon")]
     public class CategoryListViewActivity : Activity
     {
         private ListView categoryListView;                  // Stores the ListView

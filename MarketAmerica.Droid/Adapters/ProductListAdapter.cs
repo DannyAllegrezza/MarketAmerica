@@ -59,7 +59,7 @@ namespace MarketAmerica.Droid.Adapters
 
             convertView.FindViewById<TextView>(Resource.Id.productNameTextView).Text = item.name;
             convertView.FindViewById<TextView>(Resource.Id.productDescriptionTextView).Text = item.shortDescription;
-            convertView.FindViewById<TextView>(Resource.Id.productPriceTextView).Text = "$" + item.minimumPrice;
+            convertView.FindViewById<TextView>(Resource.Id.productPriceTextView).Text = item.minimumPrice;
             convertView.FindViewById<ImageView>(Resource.Id.productImageView).SetImageBitmap(imageBitmap);
             return convertView;
         }

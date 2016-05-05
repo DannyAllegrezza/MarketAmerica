@@ -15,7 +15,7 @@ using MarketAmerica.Droid.Utility;
 
 namespace MarketAmerica.Droid.Activities
 {
-    [Activity(Label = "Product Details", MainLauncher = false)]
+    [Activity(Label = "SHOP.com Product Details", MainLauncher = false, Icon = "@drawable/icon")]
     public class ProductDetailViewActivity : Activity
     {
         private ImageView productImageView;
@@ -50,7 +50,7 @@ namespace MarketAmerica.Droid.Activities
         private void BindProductDataToViews()
         {
             productNameTextView.Text = selectedProduct.name;
-            productDescriptionTextView.Text = selectedProduct.description;
+            productDescriptionTextView.Text =  selectedProduct.description;
             productPrice.Text = selectedProduct.minimumPrice;
 
             var imageBitmap = ImageHelper.GetImageBitmapFromUrl(selectedProduct.imageURL);
